@@ -35,9 +35,9 @@ const Register = () => {
 			return false;
 		}
 
-		const phonePattern = /^\+?[0-9]{10,15}$/;
+		const phonePattern = /^\d{11}$/;
 		if (!phonePattern.test(phone)) {
-			setError('Введите корректный номер телефона.');
+			setError('Номер телефона должен содержать 11 цифр.');
 			return false;
 		}
 

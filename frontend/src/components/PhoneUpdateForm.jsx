@@ -5,9 +5,36 @@ import axios from 'axios';
 const PhoneUpdateForm = ({ user, refreshProfile, setMessage }) => {
 	const [newPhone, setNewPhone] = useState('');
 	const [oldPassword, setOldPassword] = useState('');
+	const [error, setError] = useState('');
+
+	const validateForm = () => {
+		// Проверка на пустой номер телефона
+		if (!newPhone.trim()) {
+			setError('Номер телефона не может быть пустым.');
+			return false;
+		}
+
+		// Проверка на формат номера телефона (например, 10 цифр)
+		const phoneRegex = /^\d{11}$/; // Пример: номер телефона должен содержать 10 цифр
+		if (!phoneRegex.test(newPhone)) {
+			setError('Номер телефона должен содержать 10 цифр.');
+			return false;
+		}
+
+		// Проверка на минимальную длину пароля
+		if (oldPassword.length < 6) {
+			setError('Пароль должен содержать не менее 6 символов.');
+			return false;
+		}
+
+		setError('');
+		return true;
+	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		if (!validateForm()) return;
+
 		try {
 			const response = await axios.post(`http://localhost:5000/update-phone/${user.id}`, {
 				phone: newPhone,
@@ -23,6 +50,7 @@ const PhoneUpdateForm = ({ user, refreshProfile, setMessage }) => {
 	return (
 		<form name='updatephone' onSubmit={handleSubmit} className="mb-6">
 			<h3 className="text-lg font-semibold mb-2">Изменить номер телефона</h3>
+			{error && <p className="text-red-500 mb-2">{error}</p>}
 			<input
 				name='input'
 				type="tel"

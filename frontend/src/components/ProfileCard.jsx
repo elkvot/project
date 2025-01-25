@@ -22,7 +22,7 @@ export default function ProfileCard({ username, is_admin, phone, avatar, editabl
 				{!is_admin ? <p><span className="font-semibold text-lg">Принято заказов: {taken_jobs}</span>{taken_jobs > 0 ?
 					<span className='text-sm text-gray-400 ml-2'>({completed_jobs} из них выполнено)</span> : null} </p>
 					: null}
-				{editable ? <BlueButton otherClasses='mt-2'><Link to='/updateprofile'>Редактировать профиль</Link></BlueButton> : null}
+				{editable ? <Link to='/updateprofile'><BlueButton otherClasses='mt-2'>Редактировать профиль</BlueButton></Link> : null}
 			</div>
 		</div>
 	)
