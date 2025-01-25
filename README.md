@@ -33,5 +33,5 @@ CREATE TABLE `posts` (
 <hr>
 <h2>Для создания админа необходимо:</h2>
 1. Создать пользователя используя UI веб приложения, а затем выдать пользователю права админа sql-командой<br>
-<strong>UPDATE users set is_admin=1 WHERE username='имя пользователя';</strong>
+<strong>UPDATE users set is_admin=1 WHERE username='имя пользователя';</strong><br>
 2. Перезайти в аккаунт в веб-приложении
