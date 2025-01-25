@@ -14,12 +14,12 @@ export const AuthProvider = ({ children }) => {
 
     const login = (userData) => {
         setUser (userData);
-        localStorage.setItem('token', userData.token); // Сохраните токен в локальном хранилище
+        localStorage.setItem('token', userData.token); 
     };
 
     const logout = () => {
         setUser (null);
-        localStorage.clear(); // Удалите токен из локального хранилища
+        localStorage.clear();
     };
 
     return (

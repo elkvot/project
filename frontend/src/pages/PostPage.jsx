@@ -133,6 +133,10 @@ const PostDetail = () => {
 		return <div>Пост не найден.</div>;
 	}
 
+	if (!profileData) {
+		return <h1>Нет данных профиля.</h1>
+	}
+
 	return (
 		<div className="container mx-auto p-4 break-words">
 			<div className='mb-4'>
