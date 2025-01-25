@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+/*# sourceMappingURL=index.css.map */
+
+* {
+	font-size: calc(12px + 8 * (100vw - 380px) / 1140);
+}
