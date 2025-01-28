@@ -110,6 +110,8 @@ router.post('/takepost', (req, res) => {
 		}
 		db.query('UPDATE users SET taken_jobs = taken_jobs + 1 WHERE username = ?', [username], (err) => {
 			if (err) return res.status(500).send('Ошибка');
+			console.log('Кто то взял работу!');
+			
 			res.send('Успешно');
 		});
 	});
