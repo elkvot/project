@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.use('/api', posts);
 app.use('/api', users);
-app.use(changeProfileData);
+app.use('/api', changeProfileData);
 
 // Настройка хранилища для загрузки файлов
 const storage = multer.diskStorage({
