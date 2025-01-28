@@ -4,7 +4,7 @@ import AcceptedWorks from '../components/AcceptedWorks';
 
 export default function Admin() {
 	return (
-		<div>
+		<div className='mx-2 md:mx-0'>
 			<PostForm></PostForm>
 			<AcceptedWorks></AcceptedWorks>
 		</div>

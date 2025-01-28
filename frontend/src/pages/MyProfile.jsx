@@ -16,7 +16,7 @@ const MyProfile = () => {
 	
 
 	return (
-		<div>
+		<div className='mx-2 md:mx-0'>
 			<ProfileCard
 				username={profileData.username}
 				taken_jobs={profileData.taken_jobs}

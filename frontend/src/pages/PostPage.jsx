@@ -22,11 +22,14 @@ const PostDetail = () => {
 	useEffect(() => {
 		const fetchPost = async () => {
 			try {
-				const response = await fetch(`api/getpost/${id}`);
+				const response = await fetch(`../api/getpost/${id}`);
+				
 				if (!response.ok) {
 					throw new Error('Ошибка при получении поста.');
 				}
 				const data = await response.json();
+				
+				
 				setPost(data);
 				setFormData({ title: data.title, body: data.body });
 			} catch (err) {

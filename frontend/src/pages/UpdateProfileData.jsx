@@ -17,7 +17,7 @@ export default function UpdateProfileData() {
 		return <p className="text-center">Данные профиля не найдены</p>;
 	}
 	return (
-		<section>
+		<section className='mx-2 md:mx-0'>
 			<h2 className="text-xl font-semibold mb-4">Изменить профиль</h2>
 			{message && <p className="text-green-500 mb-4">{message}</p>}
 
