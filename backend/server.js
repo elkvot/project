@@ -24,7 +24,7 @@ app.use('/api', posts);
 app.use('/api', users);
 app.use('/api', changeProfileData);
 
-app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+app.use(express.static(path.join(__dirname, '../frontend', 'build')));
 
 // // Настройка хранилища для загрузки файлов
 // const storage = multer.diskStorage({
