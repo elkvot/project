@@ -111,6 +111,7 @@ const PostDetail = () => {
 		}
 	};
 	const completePost = async (postId) => {
+
 		try {
 			const response = await axios.post(`http://localhost:5000/api/completework`, { postId, username: post.performer });
 			if (response.status === 200) {
@@ -176,7 +177,7 @@ const PostDetail = () => {
 				</div>) : null}
 			{profileData.is_admin ? <BlueButton otherClasses='mt-2 w-full' onClick={() => deletePost(id)}>Удалить</BlueButton> : null}
 			{!profileData.is_admin && (post.performer === null) ? <BlueButton onClick={() => takePost(id)} otherClasses={'mt-3 w-full'}>Принять заказ</BlueButton> : null}
-			{profileData.is_admin && (post.performer !== null) ? <BlueButton onClick={() => completePost()} otherClasses={'mt-3 w-full'}>Работа выполнена</BlueButton> : null}
+			{profileData.is_admin && (post.performer !== null) ? <BlueButton onClick={() => completePost(id)} otherClasses={'mt-3 w-full'}>Работа выполнена</BlueButton> : null}
 		</div >
 	);
 };

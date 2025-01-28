@@ -2,10 +2,11 @@ const mysql = require('mysql2');
 
 // Настройка подключения к MySQL
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: 'junction.proxy.rlwy.net',
     user: 'root',
-    password: 'BVCBGFD4242BGFD',
-    database: 'project'
+    password: 'JfjmLKkbtPTdmaoIiKjoKempicHkyiSq',
+    database: 'railway',
+		port: '54991'
 });
 
 // Подключение к базе данных

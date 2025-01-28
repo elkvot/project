@@ -23,7 +23,7 @@ router.get('/user/:username', (req, res) => {
 
 
 // Регистрация пользователя
-router.post('/register', async (req, res) => {
+router.post('/register', (req, res) => {
 	const { username, password, phone } = req.body;
 
 	const checkQuery = 'SELECT * FROM users WHERE username = ? OR phone = ?';
@@ -53,7 +53,7 @@ router.post('/register', async (req, res) => {
 		const query = 'INSERT INTO users (username, password, phone) VALUES (?, ?, ?)';
 		db.query(query, [username, hashedPassword, phone], (err, result) => {
 			if (err) {
-				return res.status(500).json({ message: 'Ошибка при регистрации2', error: err });
+				return res.status(500).json({ message: err.message, error: err });
 			}
 			res.status(201).json({ id: result.insertId, username });
 		});

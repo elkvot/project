@@ -17,7 +17,7 @@ const PhoneUpdateForm = ({ user, refreshProfile, setMessage }) => {
 		// Проверка на формат номера телефона (например, 10 цифр)
 		const phoneRegex = /^\d{11}$/; // Пример: номер телефона должен содержать 10 цифр
 		if (!phoneRegex.test(newPhone)) {
-			setError('Номер телефона должен содержать 10 цифр.');
+			setError('Номер телефона должен содержать 11 цифр.');
 			return false;
 		}
 
@@ -36,7 +36,7 @@ const PhoneUpdateForm = ({ user, refreshProfile, setMessage }) => {
 		if (!validateForm()) return;
 
 		try {
-			const response = await axios.post(`http://localhost:5000/update-phone/${user.id}`, {
+			const response = await axios.post(`http://localhost:5000/api/update-phone/${user.id}`, {
 				phone: newPhone,
 				oldPassword,
 			});

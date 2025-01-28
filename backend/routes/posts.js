@@ -81,6 +81,7 @@ router.delete('/deletepost/:id', (req, res) => {
 // Эндпоинт для выполнения работы
 router.post('/completework', (req, res) => {
 	const { postId, username } = req.body;
+	
 	db.query('DELETE FROM posts WHERE id = ?', [postId], (err, result) => {
 		if (err) {
 			res.status(500).json({ message: 'Ошибка при удалении поста', error: err });

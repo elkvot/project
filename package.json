@@ -7,9 +7,8 @@
 	"type": "commonjs",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "concurrently \"npm run start --prefix frontend\" \"npm run start --prefix backend\"",
-		"frontend": "cd frontend && npm start",
-		"backend": "cd backend && npm start"
+		"build": "npm run build:frontend",
+    "build:frontend": "cd src/frontend && npm install && npm run build",
+    "start": "node src/backend/server.js"
 	}
 }
