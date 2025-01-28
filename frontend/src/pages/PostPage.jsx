@@ -138,7 +138,7 @@ const PostDetail = () => {
 	}
 
 	if (!profileData) {
-		return <h1>Нет данных профиля.</h1>
+		return <h1>Для того чтобы просматривать этот контент, авторизуйтесь.</h1>
 	}
 
 	return (
