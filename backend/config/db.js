@@ -2,10 +2,10 @@ const mysql = require('mysql2');
 
 // Настройка подключения к MySQL
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'BVCBGFD4242BGFD',
-    database: 'project'
+    host: 'localhost', // изменить под себя
+    user: 'root', // изменить под себя
+    password: 'BVCBGFD4242BGFD', // изменить под себя
+    database: 'project' // изменить под себя
 });
 
 // Подключение к базе данных
