@@ -9,6 +9,6 @@
 	"scripts": {
 		"build": "npm run build:frontend",
     "build:frontend": "cd frontend && npm install && npm run build",
-    "start": "node server.js"
+    "start": "node backend/server.js"
 	}
 }
