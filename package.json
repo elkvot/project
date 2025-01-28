@@ -8,7 +8,7 @@
 	"main": "index.js",
 	"scripts": {
 		"build": "npm run build:frontend",
-    "build:frontend": "cd src/frontend && npm install && npm run build",
-    "start": "node src/backend/server.js"
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "start": "node backend/server.js"
 	}
 }
