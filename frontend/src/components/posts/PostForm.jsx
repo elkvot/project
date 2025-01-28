@@ -17,30 +17,26 @@ const PostForm = () => {
 			body,
 		};
 
-		try {
-			const response = await fetch('api/createpost/', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(postData),
-			});
+		const response = await fetch('api/createpost/', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(postData),
+		});
 
-			if (!response.ok) {
-				return;
-			}
-
-			const result = await response.json();
-
-			setNotification('Пост успешно создан!');
-			setTimeout(() => setNotification(''), 3000);
-
-			setTitle('');
-			setBody('');
-			setIsOpen(false);
-		} catch (error) {
-			console.error('Ошибка:', error);
+		if (!response.ok) {
+			return;
 		}
+
+		const result = await response.json();
+
+		setNotification('Пост успешно создан!');
+		setTimeout(() => setNotification(''), 3000);
+
+		setTitle('');
+		setBody('');
+		setIsOpen(false);
 	};
 
 	return (

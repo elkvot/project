@@ -36,18 +36,12 @@ const PostList = ({ isAccepted }) => {
 	if (error) return <p>{error}</p>;
 
 	const deletePost = async (postId) => {
-		try {
-			const response = await fetch(`api/deletepost/${postId}`, {
-				method: 'DELETE',
-			});
+		const response = await fetch(`api/deletepost/${postId}`, {
+			method: 'DELETE',
+		});
 
-			if (response.ok) {
-				setPosts(posts.filter(post => post.id !== postId));
-			} else {
-				console.error('Ошибка при удалении поста');
-			}
-		} catch (error) {
-			console.error('Ошибка при удалении поста:', error);
+		if (response.ok) {
+			setPosts(posts.filter(post => post.id !== postId));
 		}
 	};
 
@@ -56,7 +50,6 @@ const PostList = ({ isAccepted }) => {
 			const response = await axios.post(`api/takepost`, { postId, username: profileData.username });
 			if (response.status === 200) {
 				setPosts(posts.filter(post => post.id !== postId));
-				console.log('Работа успешно взята:', response.data);
 			}
 		} catch (error) {
 			alert('Сначала авторизуйтесь!');
