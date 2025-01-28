@@ -36,7 +36,7 @@ const PhoneUpdateForm = ({ user, refreshProfile, setMessage }) => {
 		if (!validateForm()) return;
 
 		try {
-			const response = await axios.post(`http://localhost:5000/api/update-phone/${user.id}`, {
+			const response = await axios.post(`api/update-phone/${user.id}`, {
 				phone: newPhone,
 				oldPassword,
 			});

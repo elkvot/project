@@ -12,7 +12,7 @@ export default function useProfile(user) {
 		}
 
 		try {
-			const response = await fetch('http://localhost:5000/api/user', {
+			const response = await fetch('api/user', {
 				headers: {
 					Authorization: `${user.token}`,
 				},

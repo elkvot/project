@@ -19,8 +19,8 @@ const PostList = ({ isAccepted }) => {
 		const fetchPosts = async () => {
 			try {
 				const response = isAccepted
-					? await axios.get('http://localhost:5000/api/getacceptedposts/')
-					: await axios.get('http://localhost:5000/api/getposts/');
+					? await axios.get('api/getacceptedposts/')
+					: await axios.get('api/getposts/');
 				setPosts(response.data);
 			} catch (err) {
 				setError('Ошибка загрузки постов');
@@ -37,7 +37,7 @@ const PostList = ({ isAccepted }) => {
 
 	const deletePost = async (postId) => {
 		try {
-			const response = await fetch(`http://localhost:5000/api/deletepost/${postId}`, {
+			const response = await fetch(`api/deletepost/${postId}`, {
 				method: 'DELETE',
 			});
 
@@ -53,7 +53,7 @@ const PostList = ({ isAccepted }) => {
 
 	const takePost = async (postId) => {
 		try {
-			const response = await axios.post(`http://localhost:5000/api/takepost`, { postId, username: profileData.username });
+			const response = await axios.post(`api/takepost`, { postId, username: profileData.username });
 			if (response.status === 200) {
 				setPosts(posts.filter(post => post.id !== postId));
 				console.log('Работа успешно взята:', response.data);

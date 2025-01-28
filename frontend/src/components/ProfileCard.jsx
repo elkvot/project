@@ -9,7 +9,7 @@ export default function ProfileCard({ username, is_admin, phone, avatar, editabl
 				{avatar && (
 					<div className=" flex flex-col items-center">
 						<img
-							src={`http://localhost:5000/${avatar}`}
+							src={`${avatar}`}
 							alt="Avatar"
 							className="w-24 h-24 rounded-full object-cover"
 						/>

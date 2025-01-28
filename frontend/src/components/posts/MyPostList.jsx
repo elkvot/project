@@ -15,7 +15,7 @@ const PostList = () => {
 		const fetchPosts = async () => {
 			let response
 			try {
-				response = await axios.get(`http://localhost:5000/api/getmyposts/${profileData.username}`);
+				response = await axios.get(`api/getmyposts/${profileData.username}`);
 				setPosts(response.data);
 				setLoading(false);
 			} catch (err) {

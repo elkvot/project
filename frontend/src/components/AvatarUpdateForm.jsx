@@ -11,7 +11,7 @@ const AvatarUpdateForm = ({ user, refreshProfile, setMessage }) => {
 		formData.append('avatar', avatar);
 
 		try {
-			await axios.post(`http://localhost:5000/api/upload-avatar/${user.id}`, formData, {
+			await axios.post(`api/upload-avatar/${user.id}`, formData, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
 				},

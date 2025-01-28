@@ -36,7 +36,7 @@ const PasswordUpdateForm = ({ user, refreshProfile, setMessage }) => {
 		if (!validateForm()) return;
 
 		try {
-			const response = await axios.post(`http://localhost:5000/api/update-password/${user.id}`, {
+			const response = await axios.post(`api/update-password/${user.id}`, {
 				password: newPassword,
 				oldPassword,
 			});

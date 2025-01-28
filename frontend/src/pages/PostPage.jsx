@@ -22,7 +22,7 @@ const PostDetail = () => {
 	useEffect(() => {
 		const fetchPost = async () => {
 			try {
-				const response = await fetch(`http://localhost:5000/api/getpost/${id}`);
+				const response = await fetch(`api/getpost/${id}`);
 				if (!response.ok) {
 					throw new Error('Ошибка при получении поста.');
 				}
@@ -38,7 +38,7 @@ const PostDetail = () => {
 
 		const fetchPerformerData = async () => {
 			try {
-				const response = await fetch(`http://localhost:5000/api/user/${post.performer}`);
+				const response = await fetch(`api/user/${post.performer}`);
 				if (!response.ok) {
 					throw new Error('Ошибка при получении данных пользователя.');
 				}
@@ -65,7 +65,7 @@ const PostDetail = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await fetch(`http://localhost:5000/api/updatepost/${id}`, {
+			const response = await fetch(`api/updatepost/${id}`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ const PostDetail = () => {
 
 	const deletePost = async (postId) => {
 		try {
-			const response = await fetch(`http://localhost:5000/api/deletepost/${postId}`, {
+			const response = await fetch(`api/deletepost/${postId}`, {
 				method: 'DELETE',
 			});
 
@@ -101,7 +101,7 @@ const PostDetail = () => {
 	};
 	const takePost = async (postId) => {
 		try {
-			const response = await axios.post(`http://localhost:5000/api/takepost`, { postId, username: profileData.username });
+			const response = await axios.post(`api/takepost`, { postId, username: profileData.username });
 			if (response.status === 200) {
 				await refresh();
 				navigate('/myprofile');
@@ -113,7 +113,7 @@ const PostDetail = () => {
 	const completePost = async (postId) => {
 
 		try {
-			const response = await axios.post(`http://localhost:5000/api/completework`, { postId, username: post.performer });
+			const response = await axios.post(`api/completework`, { postId, username: post.performer });
 			if (response.status === 200) {
 				navigate('/admin');
 			}

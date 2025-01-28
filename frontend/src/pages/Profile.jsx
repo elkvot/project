@@ -12,7 +12,7 @@ const Profile = () => {
     useEffect(() => {
         const fetchUserProfile = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/user/${username}`);
+                const response = await axios.get(`api/user/${username}`);
                 setProfileData(response.data);
             } catch (err) {
                 setError(err.response ? err.response.data.message : 'Ошибка загрузки данных');
