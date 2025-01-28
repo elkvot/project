@@ -27,12 +27,10 @@ const PostForm = () => {
 			});
 
 			if (!response.ok) {
-				console.log('Ошибка фетчинга');
 				return;
 			}
 
 			const result = await response.json();
-			console.log('Пост создан:', result);
 
 			setNotification('Пост успешно создан!');
 			setTimeout(() => setNotification(''), 3000);
